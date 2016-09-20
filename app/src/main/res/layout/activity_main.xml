@@ -9,7 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.learningandroid.justjava.MainActivity">
+    tools:context="com.learningandroid.justjava.MainActivity"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -73,8 +74,9 @@
         android:layout_height="wrap_content"
         android:text="ORDER"
         android:onClick="submitOrder"
-        android:id="@+id/button"/>
-
+        android:id="@+id/button"
+        android:elevation="15dp"
+        android:backgroundTint="@android:color/holo_blue_bright"/>
 
 
 </LinearLayout>

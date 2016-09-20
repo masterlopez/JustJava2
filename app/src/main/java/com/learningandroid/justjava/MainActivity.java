@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
-
 /**
  * This app displays an order form to order coffee
  */
@@ -47,9 +45,12 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View v)
     {
         //displayPrice(quantity * 5);
-        int price = quantity * 5;
+        int price = calculatePrice();
         String priceMessage = "The price for " + quantity + " cup(s) is $" + price;
+        priceMessage = priceMessage + ".\nThank you!";
         displayMessage(priceMessage);
+
+        //calculatePrice();
     }
 
     /**
@@ -64,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given price value on the screen.
      */
-    private void displayPrice(int number)
-    {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
+//    private void displayPrice(int number)
+//    {
+//        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+//        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+//    }
 
 
 
@@ -80,5 +81,16 @@ public class MainActivity extends AppCompatActivity {
     {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
+    }
+
+    /**
+     * Calculates the price of the order.
+     *
+     * @ quantity is the number of cups of coffee ordered
+     */
+    private int calculatePrice()
+    {
+       int price = quantity * 5;
+        return price;
     }
 }
